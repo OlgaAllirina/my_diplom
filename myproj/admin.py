@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from models import *
 
-# Register your models here.
+from .models import User, Shop, Category, Product, ProductInfo, Parameter, ProductParameter, Order, OrderItem, \
+    Contact, ConfirmEmailToken
+
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
@@ -70,4 +71,3 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(ConfirmEmailToken)
 class ConfirmEmailTokenAdmin(admin.ModelAdmin):
     list_display = ('user', 'key', 'created_at',)
-
